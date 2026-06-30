@@ -13,7 +13,7 @@ NOC analyst skills: device monitoring, alerting, troubleshooting, and documentat
 - **Segments:** WAN / LAN (10.10.10.0/24) / DMZ (10.10.20.0/24)
 
 ## Progress
-- [x] Phase 1 — Network foundation & firewall ([build log](docs/01-network-foundation.md))
+- [x] Phase 1 — Network foundation & firewall ([build log](docs/01-network-foundation-buildlog.md))
 - [ ] Phase 2 — Endpoints + monitoring server connectivity
 - [ ] Phase 3 — Dashboards & alerting
 - [ ] Phase 4 — Simulated incidents & runbooks
