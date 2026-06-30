@@ -18,4 +18,4 @@ NOC analyst skills: device monitoring, alerting, troubleshooting, and documentat
 - [ ] Phase 3 — Dashboards & alerting
 - [ ] Phase 4 — Simulated incidents & runbooks
 
-![pfSense Dashboard](screenshots/pfsense-dashboard.png)
+![pfSense Dashboard](doc/screenshots/pfsense-dashboard.png)
