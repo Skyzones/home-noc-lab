@@ -43,7 +43,7 @@ A segmented virtual network running under VMware Workstation Pro, monitored by a
 
 **Address reservation** — DHCP static mapping pinning the endpoint for reliable monitoring:
 
-![DHCP static mapping](docs/screenshots/2a -dhcp-static-mapping.png)
+![DHCP static mapping](docs/screenshots/2a-dhcp-static-mapping.png)
 
 **Remote management** — SSH from the host, across the lab segment:
 
