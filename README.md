@@ -39,15 +39,15 @@ A segmented virtual network running under VMware Workstation Pro, monitored by a
 
 **Endpoint routing through the firewall** — gateway, internet (NAT), and DNS from the LAN endpoint:
 
-![Routing verification](screenshots/2a-routing-test-pings.png)
+![Routing verification](docs/screenshots/2a-routing-test-pings.png)
 
 **Address reservation** — DHCP static mapping pinning the endpoint for reliable monitoring:
 
-![DHCP static mapping](screenshots/2a_-dhcp-static-mapping.png)
+![DHCP static mapping](docs/screenshots/2a -dhcp-static-mapping.png)
 
 **Remote management** — SSH from the host, across the lab segment:
 
-![SSH remote access](screenshots/2a-remote-access.png)
+![SSH remote access](docs/screenshots/2a-remote-access.png)
 
 ---
 
