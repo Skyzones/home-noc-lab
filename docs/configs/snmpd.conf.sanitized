@@ -1,0 +1,33 @@
+# /etc/snmp/snmpd.conf — lab-server-01 (Ubuntu 26.04)
+# Phase 2c — sanitized for public repo. Real community string stored in password manager.
+# Only the lines changed from the Ubuntu default are shown; the rest of the stock file is untouched.
+
+# --- SECTION: System Information Setup ---
+# Convention mirrored exactly on pfSense so LibreNMS groups devices consistently.
+sysLocation    Home NOC Lab - VMware Workstation
+sysContact     Shawn - Home NOC Lab
+
+# --- SECTION: Agent Behaviour ---
+# Default binds to localhost only, which makes the agent invisible to a remote poller.
+# Commented out and replaced with a bind on all interfaces, port 161.
+#agentaddress  127.0.0.1,[::1]
+agentaddress   udp:161
+
+# --- SECTION: Access Control ---
+# Stock Ubuntu lines commented out. Both used the community string "public" and carried
+# -V systemonly, which restricts readable OIDs to the system and hrSystem branches only.
+# That restriction is not obvious from a `snmpwalk <host> system` test -- it surfaces later
+# as missing CPU/memory/storage graphs in LibreNMS. See troubleshooting/phase-2c-log.md #5.
+#rocommunity   public default -V systemonly
+#rocommunity6  public default -V systemonly
+
+# Read-only, no view restriction, source-restricted to the monitoring server only.
+# The poller's real address works here because the path is routed, not NATed --
+# packets arrive with their original source IP intact.
+rocommunity    <COMMUNITY_STRING> <POLLER_IP>
+
+# --- Planned: SNMPv3 (Step 7b) ---
+# v2c community strings travel in cleartext. Hardening pass will add an authPriv user
+# (SHA auth + AES privacy). Note the stock rouser line below carries the same
+# -V systemonly restriction as the rocommunity defaults did.
+# rouser        authPrivUser authpriv -V systemonly
